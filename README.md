@@ -36,4 +36,24 @@ Place the `nextprev` folder with its contents in `plugins` folder. Then update y
             )
         );
 
+Usage
+-----
+
+Add this snippet in your `blog_post.html` to show the next/previous navigation:
+
+    ...
+    
+    <?php Morfy::factory()->runAction('item_nextprev'); ?>
+
+Replace all of your `index.html` code with this:
+
+    <?php include 'header.html' ?>
+    <?php include 'navbar.html' ?>
+    <div class="container">
+        <?php Morfy::factory()->runAction('theme_content_before'); ?>
+    	<?php Morfy::factory()->runAction('index_nextprev'); ?>
+        <?php Morfy::factory()->runAction('theme_content_after'); ?>
+    </div>
+    <?php include 'footer.html' ?>
+
 Done.
