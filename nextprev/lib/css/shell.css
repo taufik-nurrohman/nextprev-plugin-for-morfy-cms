@@ -1,0 +1,42 @@
+/* Posts Listing */
+.page {
+  border-bottom:1px solid #e7e7e7;
+  padding:2em 0;
+  margin:0;
+}
+.page h3 {margin-top:0}
+.page p:last-child {margin-bottom:0}
+
+/* Next/Previous Pagination */
+.pager {
+  margin:2em 0;
+  padding:0;
+  overflow:hidden;
+}
+.pager li {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.pager .previous {float:left}
+.pager .next {float:right}
+.pager a,
+.pager span {
+  display:block;
+  color:white !important;
+  text-decoration:none !important;
+  background-color:#666;
+  padding:.5em 1em;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+  cursor:text;
+  cursor:not-allowed;
+}
+.pager a {
+  background-color:#484D7E;
+  cursor:pointer;
+}
+.pager a:focus,
+.pager a:hover {background-color:#555A8E}
+.pager a:active {background-color:#3E4067}
