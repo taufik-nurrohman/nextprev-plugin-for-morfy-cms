@@ -39,7 +39,7 @@ Place the `nextprev` folder with its contents in `plugins` folder. Then update y
 Usage
 -----
 
-Add this snippet in your `blog_post.html` to show the next/previous navigation:
+Add this snippet to your `blog_post.html` that is placed in the `themes` folder to show the next/previous navigation:
 
     ...
     
