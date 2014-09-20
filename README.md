@@ -51,7 +51,7 @@ Add this snippet to your `blog_post.html` that is placed in the `themes` folder 
 
 Replace all of your `index.html` code with this:
 
-``` .html
+``` .php
 <?php include 'header.html' ?>
 <?php include 'navbar.html' ?>
 <div class="container">
