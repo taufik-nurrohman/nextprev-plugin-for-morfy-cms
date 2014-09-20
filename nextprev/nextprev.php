@@ -7,7 +7,7 @@
  * @subpackage Plugins
  * @author Taufik Nurrohman <http://latitudu.com>
  * @copyright 2014 Romanenko Sergey / Awilum
- * @version 1.0.2
+ * @version 1.0.3
  *
  */
 
@@ -36,10 +36,10 @@ Morfy::factory()->addAction('index_nextprev', function() {
     // Get current page offset
     $current_page = isset($_GET[$config['param']]) ? $_GET[$config['param']] : 1;
     // Split all posts into chunks
-    $posts = array_chunk($all_posts, $per_page);
+    $posts = is_array($all_posts) ? array_chunk($all_posts, $per_page) : array();
 
     // Posts loop
-    if( ! empty($posts[$current_page - 1])) {
+    if(isset($posts[$current_page - 1]) && ! empty($posts[$current_page - 1])) {
         foreach($posts[$current_page - 1] as $post) {
             echo '<div class="' . $config['classes']['page_item'] . '">';
             echo $post['title'] ? '<h3><a href="' . $post['url'] . '">' . $post['title'] . '</a></h3>' : "";
@@ -89,8 +89,8 @@ Morfy::factory()->addAction('item_nextprev', function() {
     // Find next and previous link from current page
     for($i = 0; $i < $total_posts; $i++) {
         if($current_page['date'] == $all_posts[$i]['date']) {
-            $prev_page = ! empty($all_posts[$i - 1]['url']) ? $all_posts[$i - 1]['url'] : null;
-            $next_page = ! empty($all_posts[$i + 1]['url']) ? $all_posts[$i + 1]['url'] : null;
+            $prev_page = isset($all_posts[$i - 1]['url']) && ! empty($all_posts[$i - 1]['url']) ? $all_posts[$i - 1]['url'] : null;
+            $next_page = isset($all_posts[$i + 1]['url']) && ! empty($all_posts[$i + 1]['url']) ? $all_posts[$i + 1]['url'] : null;
         }
     }
 
