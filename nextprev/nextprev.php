@@ -7,7 +7,7 @@
  * @subpackage Plugins
  * @author Taufik Nurrohman <http://latitudu.com>
  * @copyright 2014 Romanenko Sergey / Awilum
- * @version 1.0.3
+ * @version 1.0.4
  *
  */
 
@@ -91,6 +91,8 @@ Morfy::factory()->addAction('item_nextprev', function() {
         if($current_page['date'] == $all_posts[$i]['date']) {
             $prev_page = isset($all_posts[$i - 1]['url']) && ! empty($all_posts[$i - 1]['url']) ? $all_posts[$i - 1]['url'] : null;
             $next_page = isset($all_posts[$i + 1]['url']) && ! empty($all_posts[$i + 1]['url']) ? $all_posts[$i + 1]['url'] : null;
+        } else {
+            $prev_page = $next_page = null;
         }
     }
 
