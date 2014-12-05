@@ -87,12 +87,11 @@ Morfy::factory()->addAction('item_nextprev', function() {
     // echo $current_page['date'];
 
     // Find next and previous link from current page
+    $prev_page = $next_page = null;
     for($i = 0; $i < $total_posts; $i++) {
         if($current_page['date'] == $all_posts[$i]['date']) {
             $prev_page = isset($all_posts[$i - 1]['url']) && ! empty($all_posts[$i - 1]['url']) ? $all_posts[$i - 1]['url'] : null;
             $next_page = isset($all_posts[$i + 1]['url']) && ! empty($all_posts[$i + 1]['url']) ? $all_posts[$i + 1]['url'] : null;
-        } else {
-            $prev_page = $next_page = null;
         }
     }
 
