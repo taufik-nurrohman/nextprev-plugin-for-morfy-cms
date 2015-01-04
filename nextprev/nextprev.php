@@ -27,7 +27,7 @@ Morfy::factory()->addAction('index_nextprev', function() {
     // Get current URI segments
     $path = Morfy::factory()->getUriSegments();
     $path = implode('/', $path);
-    // Number of posts to display per page
+    // Number of posts to display per page request
     $per_page = isset($config['limit']) ? $config['limit'] : 5;
     // Get all posts
     $all_posts = Morfy::factory()->getPages(CONTENT_PATH . '/' . $path . '/', 'date', 'DESC', array('404', 'index'));
