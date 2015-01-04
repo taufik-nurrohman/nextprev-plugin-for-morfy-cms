@@ -15,7 +15,7 @@ Update your `config.php` file!
         ),
         'nextprev_config' => array( // <= Configuration
             'param' => 'page', // <= Page parameter name in URL
-            'limit' => 5, // <= Number of posts to display per page
+            'limit' => 5, // <= Number of posts to display per page request
             'classes' => array( // <= List of item's HTML classes
                 'page_item' => 'page',
                 'nav' => 'pager',
