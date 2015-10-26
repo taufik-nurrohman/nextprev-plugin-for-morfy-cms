@@ -12,7 +12,7 @@
  */
 
 // Configuration data
-$nextprev_config = Spyc::YAMLLoad(file_get_contents(PLUGINS_PATH . '/' . basename(__DIR__) . '/nextprev.yml'));
+$nextprev_config = Morfy::$plugins['nextprev'];
 
 // Initialize Fenom
 $nextprev_template = Fenom::factory(
