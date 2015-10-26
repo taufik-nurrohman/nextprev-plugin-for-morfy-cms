@@ -9,7 +9,7 @@
 
 /* Next/Previous Pagination */
 .pager {
-  margin:2em 0;
+  margin:2em;
   padding:0;
   overflow:hidden;
 }
@@ -23,8 +23,8 @@
 .pager a,
 .pager span {
   display:block;
-  color:white !important;
-  text-decoration:none !important;
+  color:white;
+  text-decoration:none;
   background-color:#666;
   padding:.5em 1em;
   -webkit-border-radius:5px;
