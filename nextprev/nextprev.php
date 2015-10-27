@@ -7,7 +7,7 @@
  * @subpackage Plugins
  * @author Taufik Nurrohman <http://latitudu.com>
  * @copyright 2015 Romanenko Sergey / Awilum
- * @version 2.0.0
+ * @version 2.0.1
  *
  */
 
