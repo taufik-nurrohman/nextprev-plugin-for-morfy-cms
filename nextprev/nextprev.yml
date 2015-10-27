@@ -4,23 +4,15 @@ param: page
 # Number of posts to display per page request
 limit: 5
 
-# List of item's HTML classes
-classes:
-  page_item: page
-  nav: pager
-  nav_prev: previous
-  nav_next: next
-  nav_disabled: disabled
-
 # List of item's readable text or labels
 labels:
   nav_prev: '&larr; Previous'
   nav_next: 'Next &rarr;'
-  not_found: '<div class="alert alert-danger"><p>Not found.</p></div>'
+  not_found: 'Not found.'
 
 # Plugin meta
 name: 'Next/Previous Navigation (Pagination)'
-version: 2.0.0
+version: 2.0.1
 description: "Provides next/previous navigation for blog."
 author:
   name: Taufik Nurrohman

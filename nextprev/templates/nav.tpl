@@ -1,19 +1,19 @@
-<ul class="{$config.classes.nav}">
+<ul class="pager">
   {if $prev}
-    <li class="{$config.classes.nav_prev}">
+    <li class="previous">
       <a href="{$prev}">{$config.labels.nav_prev}</a>
     </li>
   {else}
-    <li class="{$config.classes.nav_prev} {$config.classes.nav_disabled}">
+    <li class="previous disabled">
       <span>{$config.labels.nav_prev}</span>
     </li>
   {/if}
   {if $next}
-    <li class="{$config.classes.nav_next}">
+    <li class="next">
       <a href="{$next}">{$config.labels.nav_next}</a>
     </li>
   {else}
-    <li class="{$config.classes.nav_next} {$config.classes.nav_disabled}">
+    <li class="next disabled">
       <span>{$config.labels.nav_next}</span>
     </li>
   {/if}

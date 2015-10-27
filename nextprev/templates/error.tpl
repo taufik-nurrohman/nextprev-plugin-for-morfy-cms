@@ -1,3 +1,5 @@
-<div class="{$config.classes.page_item}">
-  {$config.labels.not_found}
+<div class="page">
+  <div class="alert alert-danger">
+    <p>{$config.labels.not_found}</p>
+  </div>
 </div>

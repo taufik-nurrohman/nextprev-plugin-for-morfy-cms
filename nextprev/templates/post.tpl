@@ -1,4 +1,4 @@
-<div class="{$config.classes.page_item}">
+<div class="page">
   {if $page.title}
     <h3><a href="{$page.url}">{$page.title}</a></h3>
   {/if}
