@@ -10,7 +10,7 @@ labels:
   nav_next: 'Next &rarr;'
   not_found: 'Not found.'
 
-# Plugin meta
+# Plugin metadata
 name: 'Next/Previous Navigation (Pagination)'
 version: 2.0.1
 description: "Provides next/previous navigation for blog."
