@@ -28,9 +28,7 @@ Add this snippet to your `blog_post.tpl` that is placed in the `themes` folder t
 Replace your posts loop in `blog.tpl` and/or `index.tpl` with this:
 
 ~~~ .no-highlight
-{Morfy::runAction('theme_content_before')}
 {Morfy::runAction('nextprev')}
-{Morfy::runAction('theme_content_after')}
 ~~~
 
 Done.
