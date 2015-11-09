@@ -33,7 +33,8 @@ Replace your posts loop in `blog.tpl` and/or `index.tpl` with this:
 
 Done.
 
-### Added New Global Variable
+New Global Variable
+-------------------
 
 `$.site.offset` will return the page offset.
 
