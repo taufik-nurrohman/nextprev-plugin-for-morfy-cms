@@ -7,7 +7,7 @@
  * @subpackage Plugins
  * @author Taufik Nurrohman <http://latitudu.com>
  * @copyright 2015 Romanenko Sergey / Awilum
- * @version 2.0.1
+ * @version 2.0.2
  *
  */
 
@@ -21,15 +21,20 @@ $nextprev_template = Fenom::factory(
     Morfy::$fenom
 );
 
+// Add global `$.site.offset` variable
+Morfy::$site['offset'] = isset($_GET[$nextprev_config['param']]) ? (int) $_GET[$nextprev_config['param']] : 1;
+
 // Include `shell.css` in header
 // Uncomment the hook function below if you are not using Bootstrap.
-// Morfy::addAction('theme_header', function() {
-//     echo '<link href="' . Morfy::$site['url'] . '/plugins/' . basename(__DIR__) . '/assets/css/shell.css" rel="stylesheet">' . "\n";
-// });
+/*
+Morfy::addAction('theme_header', function() {
+    echo '<link href="' . Morfy::$site['url'] . '/plugins/' . basename(__DIR__) . '/assets/css/shell.css" rel="stylesheet">' . "\n";
+});
+*/
 
 // For posts listing page
-// Usage => Morfy::runAction('index_nextprev');
-Morfy::addAction('index_nextprev', function() use($nextprev_config, $nextprev_template) {
+// Usage => Morfy::runAction('nextprev.index');
+Morfy::addAction('nextprev.index', function() use($nextprev_config, $nextprev_template) {
 
     // Get current URI segments
     $path = trim(Url::getUriString(), '/');
@@ -40,7 +45,7 @@ Morfy::addAction('index_nextprev', function() use($nextprev_config, $nextprev_te
     // Calculate total pages
     $total_pages = ceil(count($all_pages) / $per_page);
     // Get current page offset
-    $current_page = isset($_GET[$nextprev_config['param']]) ? (int) $_GET[$nextprev_config['param']] : 1;
+    $current_page = Morfy::$site['offset'];
     // Split all posts into chunks
     $pages = is_array($all_pages) ? array_chunk($all_pages, $per_page) : array();
 
@@ -69,8 +74,8 @@ Morfy::addAction('index_nextprev', function() use($nextprev_config, $nextprev_te
 });
 
 // For single article
-// Usage => Morfy::runAction('item_nextprev');
-Morfy::addAction('item_nextprev', function() use($nextprev_config, $nextprev_template) {
+// Usage => Morfy::runAction('nextprev.item');
+Morfy::addAction('nextprev.item', function() use($nextprev_config, $nextprev_template) {
 
     // Get current URI segments
     $path = Url::getUriSegments();
@@ -109,8 +114,9 @@ Morfy::addAction('item_nextprev', function() use($nextprev_config, $nextprev_tem
 
 });
 
-// Conditional action between `index_nextprev` and `item_nextprev`
+// Conditional action between `nextprev.index` and `nextprev.item`
+// Usage => Morfy::runAction('nextprev');
 Morfy::addAction('nextprev', function() {
     $path = trim(Url::getUriString(), '/');
-    Morfy::runAction((file_exists(PAGES_PATH . '/' . $path . '/index.md') ? 'index' : 'item') . '_nextprev');
+    Morfy::runAction('nextprev.' . (file_exists(PAGES_PATH . '/' . $path . '/index.md') ? 'index' : 'item'));
 });

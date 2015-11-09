@@ -32,3 +32,9 @@ Replace your posts loop in `blog.tpl` and/or `index.tpl` with this:
 ~~~
 
 Done.
+
+### Added New Global Variable
+
+`$.site.offset` will return the page offset.
+
+This is basically equal to `$.get.page`. But since the `page` parameter URL is dynamic, you cannot use the `$.get.page` variable safely. Because if you change the `param` configuration value to `foo` for example, then you have to replace `$.get.page` with `$.get.foo`.
