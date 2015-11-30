@@ -1,5 +1,5 @@
 <div class="page">
   <div class="alert alert-danger">
-    <p>{$config.labels.not_found}</p>
+    <p>{$config.plugins.nextprev.labels.not_found}</p>
   </div>
 </div>

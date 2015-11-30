@@ -6,14 +6,15 @@ limit: 5
 
 # List of item's readable text or labels
 labels:
-  nav_prev: '&larr; Previous'
-  nav_next: 'Next &rarr;'
+  nav:
+    prev: '&larr; Previous'
+    next: 'Next &rarr;'
   found: ""
   not_found: 'Not found.'
 
 # Plugin metadata
 name: 'Next/Previous Navigation (Pagination)'
-version: 2.0.2
+version: 2.1.0
 description: "Provides next/previous navigation for blog."
 author:
   name: Taufik Nurrohman
